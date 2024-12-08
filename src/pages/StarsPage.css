@@ -1,0 +1,71 @@
+/* Full-page container */
+.stars-page-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: black;
+  overflow: hidden;
+}
+
+/* Stars container for background */
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Behind text */
+}
+
+/* Star styling */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkling linear infinite;
+}
+
+/* Twinkling animation for stars */
+@keyframes twinkling {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(-10px);
+  }
+}
+
+/* Text container for random text */
+.text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Above stars */
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Random text styling */
+.random-text {
+  position: absolute;
+  font-size: 1.5rem;
+  color: white;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+/* Optional: Fade-out animation for text */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
